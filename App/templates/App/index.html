@@ -38,12 +38,37 @@
                 {% for song in songs %}
                     <div class="grid text-center">
                         <div class="g-col-4">#{{song.id}}</div>
-                        <div class="g-col-4">{{song.title}}</div>
-                        <div class="g-col-4">{{song.artist}}</div>
+                        <div class="g-col-4">{{song.title}} | {{song.artist}}</div>
+                        <div class="g-col-4">
+                            <div class="playButton">
+                                <i class="bi bi-play-circle"></i>
+                            </div>
+                            <div class="pauseButton hidden">
+                                <i class="bi bi-pause-circle"></i>
+                            </div>
+                        </div>
                     </div>
                 {% endfor %}
             </div>
         </div>
+    </div>
+</div>
+
+
+<div class="container__profile">
+    <div class="content__profile">
+        <header id="userProfile">
+            <div class="userProfile__info">
+                <div class="userProfile__info__images">
+                    <div class="userProfile__info__image1">IMAGEN DE PORTADA</div>
+                    <div class="userProfile__info__image2">IMAGEN DE PERFIL</div>
+                </div>
+                <div class="userProfile__info__name">
+                    <h3>{{user.username}}</h3>
+                </div>
+                
+            </div>
+        </header>
     </div>
 </div>
 
