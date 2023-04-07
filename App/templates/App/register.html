@@ -7,7 +7,8 @@
 
 <div class="container__register">
     <div class="register__form">
-        <form action="{%url 'register_view'%}" method="post">
+        <form action="{%url 'register'%}" method="post">
+            {%csrf_token%}
             <div class="form-floating mb-3">
                 <input type="text" name="username" class="form-control" id="floatingInput" placeholder="name@example.com">
                 <label for="floatingInput">Username</label>
@@ -21,7 +22,7 @@
                 <label for="floatingPassword">Password</label>
             </div>
             <div class="form-button">
-                <button type="button" class="btn btn-outline-primary">REGISTER</button>
+                <button type="submit" class="btn btn-outline-primary">REGISTER</button>
             </div>
             <div class="form__text">
                 <p>Already have an account? <a href="{%url 'login'%}">Login</a></p>

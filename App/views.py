@@ -96,6 +96,9 @@ def login_view(request):
         username = request.POST["username"]
         password = request.POST["password"]
 
+        # Username convert to lowercase
+        username = username.lower()
+
         user = authenticate(request, username=username, password=password)
 
         if user is not None:
