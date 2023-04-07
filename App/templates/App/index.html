@@ -1,0 +1,50 @@
+{%extends 'App/layout.html'%}
+
+{%load static%}
+
+
+{%block content%}
+
+<div class="container__index">
+    <div class="content__index">
+        <div class="search__navbar">
+            <input type="text" name="q" id="query" placeholder="Search a song">
+            <button type="submit"><i class="bi bi-search"></i></button>
+        </div>
+        <div class="randomSong">
+            <h3>RANDOM SONG</h3>
+            <div class="randomSong__content">
+                <div class="randomSong__content__info">
+                    <div class="randomSong__title">
+                        <h4>{{randomSong.title}}</h4>
+                    </div>
+                    <div class="randomSong__artist">
+                        <h4>{{randomSong.artist}}</h4>
+                    </div>
+                </div>
+                <div class="randomSong__song">
+                    <audio controls>
+                        <source src="../../../media/{{randomSong.song}}" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="randomSong__refresh">
+                    <button type="button" class="btn btn-outline-primary">REFRESH</button>
+                </div>
+            </div>
+        </div>
+        <div class="songsLibrary">
+            <h3>SONGS</h3>
+            <div class="songsList">
+                {% for song in songs %}
+                    <div class="grid text-center">
+                        <div class="g-col-4">#{{song.id}}</div>
+                        <div class="g-col-4">{{song.title}}</div>
+                        <div class="g-col-4">{{song.artist}}</div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{%endblock%}

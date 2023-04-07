@@ -1,0 +1,33 @@
+{%extends 'App/layout.html'%}
+
+{%load static%}
+
+
+{%block content%}
+
+<div class="container__register">
+    <div class="register__form">
+        <form action="{%url 'register_view'%}" method="post">
+            <div class="form-floating mb-3">
+                <input type="text" name="username" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput">Username</label>
+            </div>
+            <div class="form-floating">
+                <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password">
+                <label for="floatingPassword">Password</label>
+            </div>
+            <div class="form-floating">
+                <input type="password" name="confirmation" class="form-control" id="floatingPassword" placeholder="Password">
+                <label for="floatingPassword">Password</label>
+            </div>
+            <div class="form-button">
+                <button type="button" class="btn btn-outline-primary">REGISTER</button>
+            </div>
+            <div class="form__text">
+                <p>Already have an account? <a href="{%url 'login'%}">Login</a></p>
+            </div>
+        </form>
+    </div>
+</div>
+
+{%endblock%}
